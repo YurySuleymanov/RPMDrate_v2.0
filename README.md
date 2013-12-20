@@ -89,3 +89,20 @@ code in-place using the command ::
 A Makefile that wraps these commands has been provided. The Makefile also
 provides a clean target for deleting all files created during compilation.
 
+List of the program files
+---------------------
+rpmdrate/_main.f90 - The main Fortran module providing the core RPMD algorithm
+rpmdrate/_main.pyf - f2py wrapper script for exposing Fortran subroutines to Python
+rpmdrate/_math.f90 - Auxiliary mathematics subroutines
+rpmdrate/_surface.f90 - Subroutines defining the reactant and transition state dividing surfaces (including gradients and Hessians)
+rpmdrate/__init__.py - Indicates that the directory is a Python package
+rpmdrate/blas_lapack.f90 - Subroutines from BLAS and LAPACK (to remove external dependency on these programs)
+rpmdrate/constants.py - Definitions of relevant physical constants
+rpmdrate/element.py - Definitions of relevant chemical elements and their atomic masses
+rpmdrate/input.py - Functionality for parsing RPMDrate input files
+rpmdrate/interpolate.py - Classes used for linear, semilogarithmic, and logarithmic interpolation
+rpmdrate/main.py - The main Python module used for running RPMD jobs
+rpmdrate/quantity.py - Functions for manipulating physical quantities, including unit conversions
+rpmdrate/surface.py - Python module that wraps the _surface.f90 Fortran module
+rpmdrate/thermostat.py - Classes representing the available thermostats
+rpmdrate.py - Main execution script for RPMDrate, used to start RPMD calculations
